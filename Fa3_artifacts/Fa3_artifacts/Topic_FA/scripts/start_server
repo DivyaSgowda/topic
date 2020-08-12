@@ -1,0 +1,4 @@
+#!/bin/bash
+cd infytel
+#cd target
+java -jar target/*.jar &

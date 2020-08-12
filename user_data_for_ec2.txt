@@ -1,0 +1,30 @@
+#!/bin/bash
+sudo yum update -y
+sudo yum install ruby -y
+sudo yum install wget -y
+sudo yum install httpd -y
+cd /home/ec2-user
+
+
+
+sudo wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install
+
+sudo chmod +x ./install
+sudo ./install auto
+sudo service httpd start
+
+#Anyone of the two based on region
+wget https://aws-codedeploy-ap-south-1.s3.ap-south-1.amazonaws.com/latest/install
+
+
+Mumbai Bucket Name - 
+bucket-name = aws-codedeploy-ap-south-1
+region-identifier = ap-south-1
+
+N.Virginia Bucket Name - 
+bucket-name = aws-codedeploy-us-east-1
+region-identifier = us-east-1
+
+
+To check codeDeploy agent status - 
+sudo service codedeploy-agent status
